@@ -5,35 +5,30 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
     <script src="components.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKiqhKctBD-SHl2sTjrhVQw91Ua5NDf1w&sensor=false"></script>
     <script src="tides.js"></script>
     <link rel="stylesheet" href="bootstrap.css">
-      
-    
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKiqhKctBD-SHl2sTjrhVQw91Ua5NDf1w&sensor=false"></script>
-
-    
  <link rel="stylesheet" href="tides.css">
   </head>
   <body>
-    
     <div class="banner" >
       <div class="title">Tide Times!</div>
       <div class="banner-image" ></div>
     </div>
     <tabs class="app">
       <pane title="Times">
-        Date: {{ '2012-04-01' | date:'fullDate' }} <br>
-        Currency: {{ 123456 | currency }} <br>
-        Number: {{ 98765.4321 | number }} <br>
+        <div id="map-canvas" style="width:300px; height: 300px;"></div>
       </pane>
       <pane title="About">
         
-        <div ng-controller="aboutController">
-          <span>{{message}}</span>
+        <div >
+          <span>
+            Thanks for using my site, I hope you found it useful.<br>
+            It is a free site, you can get the source from the <a href="https://github.com/maneti/tides" title="github.com/maneti/tides">GitHub repository</a><br><br>
+            This site is made using <a href="http://angularjs.org/" title="angularjs.org">AngularJS</a> and the <a href="https://developers.google.com/maps/" title="developers.google.com/maps">Google Maps api</a>.
+          </span>
         </div>
       </pane>
     </tabs>
-     <div id="map-canvas"/>
-     
   </body>
 </html>

@@ -18,6 +18,17 @@ angular.module('app', ['components'])
     };
   }
 });
+  
+      function initialize() {
+        var mapOptions = {
+          center: new google.maps.LatLng(-34.397, 150.644),
+          zoom: 8
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"),
+            mapOptions);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+  
 function aboutController($scope) {
 	$scope.message = "Thanks for using my site, I hope you found it useful. ";
 }
@@ -37,17 +48,7 @@ function TodoCtrl($scope) {
 	title:''
   });*/
   
-  
-       /* function initialize() {
-        var mapOptions = {
-          center: new google.maps.LatLng(-34.397, 150.644),
-          zoom: 8
-        };
-        var map = new google.maps.Map(document.getElementById("map-canvas"),
-            mapOptions);
-      }*/
-      //google.maps.event.addDomListener(window, 'load', initialize);
-  
+
   $scope.todos = [
     {text:'learn angular', done:true},
     {text:'build an angular app', done:false}];

@@ -44,3 +44,10 @@ body {
 .selected-tab {
     background-color: rgb(172, 172, 172);
 }
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+    background-color: #CCC;
+}
+a {
+    color: rgb(172, 172, 172);
+}
