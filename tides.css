@@ -48,6 +48,16 @@ body {
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
     background-color: #CCC;
 }
-a {
+.tab-header {
     color: rgb(172, 172, 172);
+}
+
+.latlon-input {
+     width: 600px;
+}
+.angular-google-map-container {
+    border: 3px;
+    border-style: solid;
+    width: 600px;
+    height: 500px;
 }

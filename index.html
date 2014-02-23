@@ -6,6 +6,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
     <script src="components.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKiqhKctBD-SHl2sTjrhVQw91Ua5NDf1w&sensor=false"></script>
+    <script src='underscore-min.js'></script>
+  <script src='angular-google-maps.min.js'></script>
     <script src="tides.js"></script>
     <link rel="stylesheet" href="bootstrap.css">
  <link rel="stylesheet" href="tides.css">
@@ -17,10 +19,12 @@
     </div>
     <tabs class="app">
       <pane title="Times">
-        <div id="map-canvas" style="width:300px; height: 300px;"></div>
+        <div ng-controller="tidesController">
+          <input class="latlon-input" type="text" ng-model="latlon" placeholder="Enter a LatLng here, or drag the marker on the map">
+          <google-map center="map.center" zoom="map.zoom" id="map-canvas" class="map"></google-map>
+        </div>
       </pane>
       <pane title="About">
-        
         <div >
           <span>
             Thanks for using my site, I hope you found it useful.<br>
