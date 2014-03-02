@@ -3,11 +3,17 @@
   <head>
     <title>Tide Times</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
     <script src="components.js"></script>
     <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
     <script src='underscore-min.js'></script>
   <script src='angular-google-maps.min.js'></script>
+<script type="text/javascript" src="date.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.js"></script>
+
     <script src="tides.js"></script>
     <link rel="stylesheet" href="bootstrap.css">
  <link rel="stylesheet" href="tides.css">
@@ -30,9 +36,24 @@
             </google-map>
           </div>
           <div class="heading">
-            <div>Times...</div>
+            <div style="margin-left: 5px;">Nearest known point: {{nearest}}</div>
             <div class="results">
-              <div>{{latlon}}</div>
+              <div>
+                <div style='float: left'>Show tides for </div>
+                <input type="text" ng-model="date" ng-change="dateChange()" id="datepicker" class="date"/>
+              </div>
+              <div class="list">
+                <div>Lows:</div>
+                <li ng-repeat="low in lows">
+                  <div>{{low}}</div>
+                </li>
+              </div>
+              <div class="list">
+              <div>Highs:</div>
+              <li ng-repeat="high in highs">
+                <div>{{high}}</div>
+              </li>
+              </div>
             </div>
           </div>
         </div>
@@ -46,6 +67,8 @@
             This site is made using <a href="http://angularjs.org/" title="angularjs.org">AngularJS</a>, the
               <a href="https://developers.google.com/maps/" title="developers.google.com/maps">Google Maps api</a> and the
               <a href="http://angular-google-maps.org/" title="Google Maps for AngularJS">Google Maps for AngularJS plugin</a>.
+              <br>
+              This site uses <a href="http://freedns.afraid.org/">Free DNS</a>
           </span>
         </div>
       </pane>

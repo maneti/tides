@@ -66,11 +66,20 @@ body {
 }
 .results {
     border: 3px;
-    border-style: solid;
-    width: 300px;
+    margin-left: 5px;
+    width: 600px;
     height: 500px;
     float: left;
 }
 .disclaimer {
     font-size: 10px;
+}
+.date {
+    width: 70%;
+    background-color: rgb(53, 53, 53);
+    margin-left: 8px;
+}
+.list {
+    float: left;
+    width: 50%;
 }
